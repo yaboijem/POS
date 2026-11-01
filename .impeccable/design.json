@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T00:00:00Z",
+  "title": "Design System: Karinderya POS Admin",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Burnt Orange", "tonalRamp": ["#431407", "#7c2d12", "#9a3412", "#c2410c", "#ea580c", "#fb923c", "#fed7aa", "#fff7ed"] },
+      "ink": { "role": "neutral", "displayName": "Zinc Ink", "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#a1a1aa", "#e4e4e7", "#fafafa"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Compact headline", "purpose": "Page greeting and primary heading." },
+      "metric": { "displayName": "Sales value", "purpose": "Large tabular metric values." }
+    },
+    "shadows": [{ "name": "card-flat", "value": "none", "purpose": "Admin report and metric cards use borders and tone instead of resting shadows." }],
+    "motion": [{ "name": "sidebar-width", "value": "width 200ms", "purpose": "Persisted desktop sidebar collapse; honor the global reduced-motion override." }],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button", "kind": "button", "refersTo": "button-primary",
+      "description": "Burnt-orange action in the admin workspace.",
+      "html": "<button class=\"ds-primary\">New sale</button>",
+      "css": ".ds-primary{background:#c2410c;color:#fff;border:0;border-radius:7px;padding:8px 16px;min-height:40px;font:500 14px system-ui;cursor:pointer;transition:background-color .15s}.ds-primary:hover{background:#9a3412}.ds-primary:active{background:#c2410c}.ds-primary:focus-visible{outline:2px solid #c2410c;outline-offset:3px}.ds-primary:disabled{opacity:.5;pointer-events:none}"
+    },
+    {
+      "name": "Secondary button", "kind": "button",
+      "description": "Quiet bordered supporting action.",
+      "html": "<button class=\"ds-secondary\">Cancel</button>",
+      "css": ".ds-secondary{background:#fff;color:#18181b;border:1px solid #e4e4e7;border-radius:7px;padding:8px 16px;min-height:40px;font:500 14px system-ui;cursor:pointer;transition:background-color .15s}.ds-secondary:hover{background:#fafafa}.ds-secondary:active{background:#f4f4f5}.ds-secondary:focus-visible{outline:2px solid #c2410c;outline-offset:3px}"
+    },
+    {
+      "name": "Admin input", "kind": "input", "refersTo": "input",
+      "description": "Shadowless field with warm focus feedback.",
+      "html": "<label class=\"ds-label\" for=\"ds-search\">Search products</label><input class=\"ds-input\" id=\"ds-search\" placeholder=\"Search…\">",
+      "css": ".ds-label{display:block;margin-bottom:6px;color:#18181b;font:500 14px system-ui}.ds-input{background:#fff;color:#18181b;border:1px solid #e4e4e7;border-radius:7px;padding:10px 14px;font:14px system-ui;caret-color:#c2410c}.ds-input:hover{border-color:#e4e4e7}.ds-input:focus{border-color:#ea580c;box-shadow:0 0 0 2px #ffedd5}.ds-input:focus-visible{outline:2px solid #c2410c;outline-offset:3px}.ds-input:disabled{background:#fafafa;color:#71717a}"
+    },
+    {
+      "name": "Active navigation", "kind": "nav", "refersTo": "navigation-active",
+      "description": "Selected admin route with fine line icon.",
+      "html": "<nav aria-label=\"Workspace\"><a class=\"ds-nav\" href=\"#dashboard\" aria-current=\"page\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/></svg>Dashboard</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;background:#ffedd5;color:#9a3412;text-decoration:none;font:500 14px system-ui}.ds-nav:hover{background:#fff0df;color:#9a3412}.ds-nav:focus-visible{outline:2px solid #c2410c;outline-offset:3px}"
+    },
+    {
+      "name": "Metric card", "kind": "card", "refersTo": "metric-card",
+      "description": "Warm summary container; the preview uses an honest zero value.",
+      "html": "<section class=\"ds-card\" aria-label=\"Today's gross sales\"><p class=\"ds-label\">Today's gross sales</p><p class=\"ds-value\">₱0.00</p></section>",
+      "css": ".ds-card{padding:24px;min-height:116px;border:1px solid #fed7aa;border-radius:12px;background:#fffaf5;box-shadow:none;font-family:system-ui}.ds-card .ds-label{margin:0;color:#71717a;font-size:14px;font-weight:500}.ds-value{margin:8px 0 0;color:#18181b;font-size:30px;font-weight:600;line-height:1.25;letter-spacing:-.03em;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Selected period", "kind": "nav",
+      "description": "Real period links, not client-only tabs.",
+      "html": "<nav class=\"ds-period\" aria-label=\"Sales trend period\"><a href=\"#daily\" aria-current=\"page\">Daily</a><a href=\"#weekly\">Weekly</a><a href=\"#monthly\">Monthly</a></nav>",
+      "css": ".ds-period{display:inline-flex;padding:4px;border:1px solid #fed7aa;border-radius:8px;background:#fff7ed}.ds-period a{padding:6px 12px;border-radius:6px;font:500 12px system-ui;text-decoration:none;color:#71717a}.ds-period a[aria-current]{background:#c2410c;color:#fff}.ds-period a:hover:not([aria-current]){color:#18181b}.ds-period a:focus-visible{outline:2px solid #c2410c;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Warm Operations Workspace",
+    "overview": "A compact, shadcn/ui-inspired admin workspace makes real sales easy to scan. White content and zinc structure keep reports quiet; burnt-orange actions, warm metric surfaces, and orange chart marks give the interface the character explicitly requested by the user.\n\nThis is an extraction of the finished admin implementation, not a React or shadcn dependency migration. The visual boundary is `.admin-workspace`; the separate POS checkout and authentication layouts retain their incumbent orange system. Keep the configured business identity and logo.",
+    "keyCharacteristics": ["Compact hierarchy and tabular financial figures.", "Flat bordered cards with warm orange emphasis.", "Fine line icons, practical controls, and responsive navigation."],
+    "rules": [{ "name": "The Scope Rule", "body": "Apply this palette only inside the admin workspace; do not retheme checkout or authentication.", "section": "colors" }],
+    "dos": ["**Do** keep the orange admin palette scoped and preserve the configured business identity.", "**Do** preserve visible focus, active-route semantics, native mobile dialog behavior, and readable mobile charts.", "**Do** use real reporting values, PHP currency formatting, and tabular numeric alignment."],
+    "donts": ["**Don't** propagate admin overrides into POS checkout or authentication.", "**Don't** flatten the orange identity into an entirely neutral dashboard.", "**Don't** add decorative shipping rasters or replace informative empty states with sample sales."]
+  }
+}
